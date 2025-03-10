@@ -42,11 +42,3 @@ Uprise is a social helping platform designed to connect volunteers with people i
 
 Contributions are welcome! If you’d like to improve Uprise, feel free to fork the repository and submit a pull request.
 
-## License
-
-This project is licensed under the MIT License.
-
-## Contact
-
-For any inquiries or suggestions, please contact us at [your email].
-
