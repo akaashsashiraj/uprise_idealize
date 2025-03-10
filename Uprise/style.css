@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: black;
+    background-image: url(istockphoto-1633767377-640_adpp_is.mp4);
+    background-size: cover;
+}
+
+
+.search-bar {
+    width: 250px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #e4e4e4;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #e4e4e4;
+    padding-left: 10px;
+}
+
+.search-bar input::placeholder {
+    color: #e4e4e4;
+}
+
+.search-bar button {
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-bar button i {
+    font-size: 22px;
+    color: #e4e4e4;
+}
+
+.background {
+    width: 100%;
+    height: 100vh;
+    background: url(4K\ Night\ Traffic\ -\ Free\ Stock\ Footage\ -\ Free\ HD\ Videos\ -\ No\ Copyright.mp4) no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 550px;
+    background: url(4K\ Night\ Traffic\ -\ Free\ Stock\ Footage\ -\ Free\ HD\ Videos\ -\ No\ Copyright.mp4) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .content {
+    width: 58%;
+    padding: 50px;
+    color: #e4e4e4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content .logo {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.text-sci h2 {
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.text-sci h2 span {
+    font-size: 25px;
+}
+
+.text-sci p {
+    font-size: 16px;
+    margin: 25px 0px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a i {
+    font-size: 22px;
+    color: #e4e4e4;
+    margin-right: 10px;
+    transition: .5s ease;
+}
+
+.social-icons a:hover i {
+    transform: scale(1.2);
+}
+
+.container .logreg-box {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logreg-box .form-box {
+    width: 100%;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    color: #e4e4e4;
+    display: none;
+}
+
+.form-box.active {
+    display: block;
+}
+
+.form-box h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-box .input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #e4e4e4;
+    outline: none;
+    font-size: 16px;
+    color: #e4e4e4;
+    font-weight: 500;
+    padding-right: 28px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 19px;
+}
+
+.form-box .remember-forget {
+    font-size: 14.5px;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forget label input {
+    accent-color: #e4e4e4;
+    margin-right: 3px;
+}
+
+.remember-forget a {
+    color: #e4e4e4;
+    text-decoration: none;
+}
+
+.remember-forget a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #c4103d;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #e4e4e4;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-box .login-register {
+    font-size: 14.5px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.login-register p a {
+    color: #e4e4e4;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+span {
+    background: #964B00;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.menu {
+    background: linear-gradient(to bottom, rgba(112, 63, 2, 0.9), transparent);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 100px;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    color: aliceblue;
+}
+
+#logo {
+    margin-left: 20px;
+    height: 75px;
+    width: 75px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.466), 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 450px;
+    margin-right: auto;
+    list-style: none;
+}
+
+ul li {
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 14px;
+    color: #fff;
+}
+
+ul li a {
+    color: #ffffff;
+    font-family: sans-serif;
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+ul li a:hover {
+    color: #090909;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+ul li a:active {
+    color: #000000;
+}
+
+footer {
+    background-color: #3b2200;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer img{
+    width: 20px;
+    height: auto;
+}
+
+footer a{
+    text-decoration: none;
+}

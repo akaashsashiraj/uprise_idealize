@@ -1,0 +1,165 @@
+.pic img {
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 44%;
+    width: auto;
+    margin-top: 80px;
+
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(page-headers-e1682969268593.png.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+
+}
+
+.content h1 {
+    font-size: 70px;
+    margin-top: 100px;
+
+}
+
+.content h4 {
+
+    font-weight: 100;
+    line-height: 25px;
+}
+
+
+
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #964B00;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+
+}
+
+span {
+    background: #964B00;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+
+}
+
+button:hover span {
+    width: 100%;
+
+}
+
+button:hover {
+    border: none;
+}
+
+.menu {
+    background: linear-gradient(to bottom, rgba(112, 63, 2, 0.9), transparent);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 100px;
+    /* Set the height of the navbar */
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    color: aliceblue;
+}
+
+#logo {
+    margin-left: 20px;
+    height: 75px;
+    width: 75px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.466), 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 450px;
+    margin-right: auto;
+    list-style: none;
+}
+
+ul li {
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 14px;
+    color: #fff;
+}
+
+ul li a {
+    color: #ffffff;
+    font-family: sans-serif;
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+ul li a:hover {
+    color: #634500;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+ul li a:active {
+    color: #000000;
+}
+
+.containerr {
+    width: 100%;
+    overflow: hidden;
+}
+
+footer {
+    background-color: #3b2200;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer img{
+    width: 20px;
+    height: auto;
+}
+
+footer a{
+    text-decoration: none;
+}

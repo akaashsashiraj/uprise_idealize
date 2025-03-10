@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPRISE</title>
+    <link rel="stylesheet" href="anjali.css">
+    <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const testimonials = document.querySelectorAll(".testimonial");
+        let testimonialIndex = 0;
+
+        // Show the initial testimonial
+        testimonials[testimonialIndex].classList.add("active");
+
+        // Function to display the next testimonial
+        function showNextTestimonial() {
+            // Hide the current testimonial
+            testimonials[testimonialIndex].classList.remove("active");
+            // Move to the next testimonial
+            testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+            // Show the next testimonial
+            testimonials[testimonialIndex].classList.add("active");
+            // Remove "active" class from the first testimonial
+            if (testimonialIndex === 0) {
+                testimonials[0].classList.remove("active");
+            }
+        }
+        // Add click event listener to the next button
+        document.getElementById("nextBtn").addEventListener("click", showNextTestimonial);
+
+        // Gallery slider
+        const next = document.querySelector('.next');
+        const prev = document.querySelector('.prev');
+        const slide = document.querySelector('.slide');
+        let galleryIndex = 0;
+
+        function updateSlide() {
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach((item, index) => {
+                item.classList.remove('current', 'next', 'prev');
+                if (index === galleryIndex) {
+                    item.classList.add('current');
+                } else if (index === (galleryIndex + 1) % items.length) {
+                    item.classList.add('next');
+                    item.style.left = '70%'; // Position the next item to the right
+                } else if (index === (galleryIndex - 1 + items.length) % items.length) {
+                    item.classList.add('prev');
+                    item.style.left = '5%'; // Position the previous item to the left
+                } else {
+                    item.style.left = '50%'; // Hide other items
+                }
+            });
+        }
+
+        next.addEventListener('click', function () {
+            const items = document.querySelectorAll('.gallery-item');
+            galleryIndex = (galleryIndex + 1) % items.length;
+            updateSlide();
+        });
+
+        prev.addEventListener('click', function () {
+            const items = document.querySelectorAll('.gallery-item');
+            galleryIndex = (galleryIndex - 1 + items.length) % items.length;
+            updateSlide();
+        });
+
+        // Initialize the first view
+        updateSlide();
+
+    });
+
+    // Show the button when the user scrolls down 20px from the top of the document
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("backToTopBtn").style.display = "block";
+        } else {
+            document.getElementById("backToTopBtn").style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        // Get the current position of the page
+        const currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+        // Calculate the distance to scroll
+        const distanceToTop = -currentPosition;
+
+        // Set up the animation
+        const duration = 500; // Duration of the animation in milliseconds
+        const start = performance.now();
+
+        // Animate the scrolling
+        requestAnimationFrame(function animate(time) {
+            let timeFraction = (time - start) / duration;
+            if (timeFraction > 1) timeFraction = 1;
+
+            // Apply easing function for smoother animation
+            const easing = function (t) { return t * (2 - t); };
+            const progress = easing(timeFraction);
+
+            // Scroll the page
+            window.scrollTo(0, currentPosition + distanceToTop * progress);
+
+            // Continue the animation if not finished
+            if (timeFraction < 1) {
+                requestAnimationFrame(animate);
+            }
+        });
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const thumbnailImages = document.querySelectorAll(".thumbnailImages .images");
+        const nextButton = document.getElementById("next");
+        const previousButton = document.getElementById("previous");
+        let currentIndex = 0;
+
+
+        function showCurrentImage(index) {
+
+            thumbnailImages.forEach(function (img) {
+                img.classList.remove("clicked");
+            });
+
+            thumbnailImages[index].classList.add("clicked");
+
+            const newImageSrc = thumbnailImages[index].querySelector(".image").getAttribute("src");
+            const newDescription = thumbnailImages[index].querySelector(".description").innerHTML;
+
+            const mainImage = document.querySelector(".imageGallery .imagesList .images .image");
+            const description = document.querySelector(".imageGallery .imagesList .images .description");
+
+            mainImage.src = newImageSrc;
+            description.innerHTML = newDescription;
+        }
+
+
+        nextButton.addEventListener("click", function () {
+            currentIndex = (currentIndex + 1) % thumbnailImages.length;
+            showCurrentImage(currentIndex);
+        });
+
+
+        previousButton.addEventListener("click", function () {
+            currentIndex = (currentIndex - 1 + thumbnailImages.length) % thumbnailImages.length;
+            showCurrentImage(currentIndex);
+        });
+
+
+        thumbnailImages.forEach(function (thumbnail, index) {
+            thumbnail.addEventListener("click", function () {
+                currentIndex = index;
+                showCurrentImage(currentIndex);
+            });
+        });
+    });
+</script>
+
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="menu">
+                <a href="anjali.html"> <img id="logo" src="uprise_logo2.jpg" alt="logo"></a>
+                <ul>
+                    <li><a href="#">HEALTH CARE</a></li>
+                    <li><a href="akaash1.html">DONATIONS</a></li>
+                    <li><a href="saahi.html">VOLUNTEER</a></li>
+                    <li><a href="#">USER PROFILE</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="containerr">
+        <h1>KNIT TOGETHER IN LOVE AND SERVICE</h1>
+        <h4>Volunteers do not necessarily have the time; <br>
+            they just have the heart </h4>
+        <button type="button" id="about"><span></span><a href="#aboutus">About Us</a></button>
+        <video loop autoplay muted>
+            <source src="73228-548173103.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+    </div>
+    <hr>
+    <hr>
+    <hr><br>
+    <section class="purpose">
+        <h2 id="Customers1">What Is Our Purpose</h2>
+
+        <h3 id="mission">
+            Our mission is to empower communities by providing a centralized platform that enhances the coordination of
+            disaster
+            relief efforts. We connect volunteers, emergency responders, organizations, and donors, ensuring efficient,
+            secure,
+            and transparent management of resources and volunteer activities. Our goal is to streamline disaster
+            response,
+            minimize impact, and support affected communities effectively.</h3>
+    </section>
+    <section class="testimonials">
+        <!-- Testimonial images -->
+
+
+
+        <!-- Testimonials and boxes-->
+        <div class="testimonial">
+            <p>"Discovering this website has been a game-changer for me. The insightful articles and resources have
+                empowered me to take meaningful action against climate change. I
+                feel more informed and motivated than ever before. Thank you for making a difference!" </p>
+            <p class="customer-name">- John Doe</p>
+        </div>
+        <div class="testimonial">
+            <p>"As a concerned citizen, I've been searching for a platform that not only educates but also inspires
+                action. This website does exactly that.It's a hub of knowledge
+                and advocacy, where I've found like-minded individuals committed to combating climate change.Together,
+                we're making a real impact."</p>
+            <p class="customer-name">- Jane Smith</p>
+        </div>
+        <div class="testimonial">
+            <p>"I stumbled upon this website while researching climate solutions, and I'm so glad I did. The
+                comprehensive guides and practical tips have helped me reduce my carbon
+                footprint and live more sustainably. It's comforting to know that there are resources like this
+                available to support individuals in their journey toward a greener future." </p>
+            <p class="customer-name">- Alice Johnson</p>
+        </div>
+        <div class="testimonial">
+            <p>"I've always been passionate about environmental issues, but I struggled to find reliable information
+                amidst all the misinformation out there. This website has been
+                a breath of fresh air. The articles are well-researched and backed by science, making it easy to
+                separate fact from fiction. It's become my go-to resource for staying informed and engaged."</p>
+            <p class="customer-name">- Bob Williams</p>
+        </div>
+        <div class="testimonial">
+            <p>"As a teacher, I'm always looking for educational materials to incorporate into my curriculum. This
+                website has been a goldmine of educational resources on climate
+                change. The interactive multimedia content have captivated my students and sparked meaningful
+                discussions about sustainability and environmental stewardship. Thank
+                you for providing such valuable resources!"</p>
+            <p class="customer-name">- Emily Brown</p>
+        </div>
+        <!-- Button to view more testimonials -->
+        <button id="nextBtn">Next</button>
+    </section>
+    <button onclick="topFunction()" id="backToTopBtn" title="Go to top"><span class="material-symbols-outlined"
+            style="font-size: 40px;">expand_less</span></button>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br>
+
+
+    <section class="us">
+        <h1 id="titleAbout">ABOUT US</h1>
+        <h2 id="force">We, the young and passionate IIT undergraduates, <br>have taken the initiative to transform Sri
+            Lanka
+            into a better place for future generations.</h2>
+        </div>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="anju.heic" alt="Team Member">
+                <h3>Nishanjali Kamalendran</h3>
+                <p></p>
+            </div>
+
+            <div class="team-member">
+                <img src="archu.jpg" alt="Team Member">
+                <h3>Archanaa Ramesh</h3>
+                <p></p>
+            </div>
+
+            <div class="team-member">
+                <img src="saahi.jpg" alt="Team Member">
+                <h3>Shriaahithyaa Ganeshsarma</h3>
+                <p></p>
+            </div>
+
+            <div class="team-member">
+                <img src="akaash.jpg" alt="Team Member">
+                <h3>Akaash Sasiraj</h3>
+                <p></p>
+            </div>
+
+            <div class="team-member">
+                <img src="bathu.jpg" alt="Team Member">
+                <h3>Ariyadas Bathushan</h3>
+                <p></p>
+            </div>
+    </section>
+
+    <h1 id="gallery">GALLERY</h1>
+    <h3 id="events">The successful events we took initative of</h3>
+    <div class="imageGallery ">
+
+        <div class="imagesList">
+            <div class="images">
+                <img class="image" src="volunteer-659805_1280.jpg" alt="glaciers">
+                <div class="description">
+                    <div class="title"></div>
+                    <div class="content"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="images list">
+            <div class="images">
+                <img class="image" src="73228-548173103.mp4" alt="Drought">
+                <div class="description">
+                    <div class="title"></div>
+                    <div class="content"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="images list">
+            <div class="images">
+                <img class="image" src="istockphoto-1390078083-640_adpp_is.mp4" alt="Arctic warm period">
+                <div class="description">
+                    <div class="title"></div>
+                    <div class="content"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="images list">
+            <div class="images">
+                <img class="image" src="istockphoto-1633767377-640_adpp_is.mp4" alt="Industrial gases">
+                <div class="description">
+                    <div class="title"></div>
+                    <div class="content"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="images list">
+            <div class="images">
+                <img class="image" src="istockphoto-1644189347-640_adpp_is.mp4" alt="Wildfire">
+                <div class="description">
+                    <div class="title"></div>
+                    <div class="content"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="images list">
+            <div class="images">
+                <img class="image" src="4K Night Traffic - Free Stock Footage - Free HD Videos - No Copyright.mp4"
+                    alt="Poverty and displacement">
+                <div class="description">
+                    <div class="title"></div>
+                    <div class="content"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="images list">
+            <div class="images">
+                <img class="image" src="photo-1593113598332-cd288d649433.webp" alt="Increase of ocean level">
+                <div class="description">
+                    <div class="title"></div>
+                    <div class="content"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="images list">
+            <div class="images">
+                <img class="image" src="october-7521183_1280.jpg" alt="Dead coral">
+                <div class="description">
+                    <div class="title"></div>
+                    <div class="content"></div>
+                </div>
+            </div>
+
+        </div>
+        <!--Thumbnail images and descriptions-->>
+        <div class="thumbnailImages">
+
+            <div class="images">
+                <img class="image" src="volunteer-659805_1280.jpg" alt="Glaciers">
+                <div class="description">
+                    <div class="title"> 2008</div>
+                    <div class="content"> The Environmental Club of IIT organized<br>
+                        a successful EnvironmentalAwareness Drive,<br>
+                        bringing together students and faculty members to<br>
+                        promote sustainability and<br>
+                        environmental consciousness within the campus<br>
+                        and the surrounding community.<br>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="images">
+                <img class="image" src="73228-548173103.mp4" alt="Drought">
+                <div class="description">
+                    <div class="title">2009</div>
+                    <div class="content">The event featured a tree planting ceremony where <br>
+                        volunteers planted saplings around the campus <br>
+                        to enhance greenery and promote biodiversity.</div>
+                </div>
+            </div>
+
+            <div class="images">
+                <img class="image" src="istockphoto-1390078083-640_adpp_is.mp4" alt="Arctic warm period">
+                <div class="description">
+                    <div class="title">2010</div>
+                    <div class="content">Interactive workshops were held to educate<br>
+                        participants on topics such as wastemanagement,<br>
+                        recycling, and sustainable living practices.<br>
+                        Experts from the field were invited to<br>
+                        share their knowledge and experiences.</div>
+                </div>
+            </div>
+
+            <div class="images">
+                <img class="image" src="istockphoto-1633767377-640_adpp_is.mp4" alt="Industrial gases">
+                <div class="description">
+                    <div class="title">2011</div>
+                    <div class="content">An IIT-organized environmental conservation event aimed <br>
+                        to clean up local water bodies, <br>involving students and <br>
+                        volunteers in removing<br> waste, raising awareness about pollution's<br>
+                        impact, and fostering community engagement for <br>sustainable environmental practices.</div>
+                </div>
+            </div>
+
+            <div class="images">
+                <img class="image" src="istockphoto-1644189347-640_adpp_is.mp4" alt="Wildfire">
+                <div class="description">
+                    <div class="title">2012</div>
+                    <div class="content">
+                        A cultural exchange event organized <br>by IIT facilitated interaction<br> between students and
+                        local
+                        communities, <br>featuring performances, workshops on traditional arts, <br>and discussions to
+                        promote<br>
+                        cross-cultural understanding and appreciation..</div>
+                </div>
+            </div>
+
+            <div class="images">
+                <img class="image" src="4K Night Traffic - Free Stock Footage - Free HD Videos - No Copyright.mp4"
+                    alt="Poverty and displacement">
+                <div class="description">
+                    <div class="title">2013</div>
+                    <div class="content">IIT organizes healthcare volunteer events<br> to provide medical services and
+                        health education, focusing on<br> underserved communities through check-ups, vaccinations,<br>
+                        and
+                        workshops, collaborating with <br>local providers and NGOs for sustainable impact.</div>
+                </div>
+            </div>
+
+            <div class="images">
+                <img class="image" src="photo-1593113598332-cd288d649433.webp" alt="Increase of ocean level">
+                <div class="description">
+                    <div class="title">2014</div>
+                    <div class="content"> The event concluded with a rally through nearby residential areas,<br> where
+                        participants distributed<br> pamphlets and engaged with<br> local residents to spread awareness
+                        about environmental issues <br>and the importance of community involvement in sustainability
+                        efforts.
+                    </div>
+                </div>
+            </div>
+
+            <div class="images">
+                <img class="image" src="VIDEO.mp4" alt="Dead corals">
+                <div class="description">
+                    <div class="title">2015</div>
+                    <div class="content">A creative station was set up where volunteers could <br>make eco-friendly
+                        crafts
+                        from recycled materials. <br>This activity aimed to demonstrate the importance<br> of reusing
+                        and
+                        repurposing items.</div>
+                </div>
+            </div>
+        </div>
+        <!--Buttons to skip images-->
+        <div class="slide">
+            <button id="previous">&lt;</button>
+            <button id="next">></button>
+        </div>
+    </div>
+    </div>
+    <h1 id="end">TAKE THE STEP !</h1>
+    <br><br>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 UPRISE. All rights reserved.</p>
+            <p>
+                <a href="#" style="color: #fff;"><img src ="facebook (1).png" alt="facebook"></a> |
+                <a href="#" style="color: #fff;"><img src ="twitter-sign (1).png" alt="twitter"></a> |
+                <a href="#" style="color: #fff;"><img src="instagram (1).png" alt="instagram"></a>
+            </p>
+            <p>
+                <a href="anjali.html" style="color: #fff;">Home</a> |
+                <a href="#" style="color: #fff;">Health Care</a> |
+                <a href="akaash1.html" style="color: #fff;">Donations</a> |
+                <a href="saahi.html" style="color: #fff;">Volunteer</a> |
+                <a href="#" style="color: #fff;">User Profile</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

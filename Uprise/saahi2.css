@@ -1,0 +1,111 @@
+body {
+    color: aliceblue;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.593), rgba(0, 0, 0, 0.75)), url(photo-1593113598332-cd288d649433.webp);
+    background-size: cover;
+}
+
+#container {
+    background-color: rgba(82, 42, 0, 0.848);
+    width: 50%;
+    height: 65%;
+    top: 10%;
+    left: 23.5%;
+    position: absolute;
+    border: solid white 3px;
+    border-radius: 10px;
+    padding: 10px;
+    line-height: 64px;
+}
+
+#Form2 label {
+    margin-left: 18%;
+}
+
+#Form2 input#name2,
+#Form2 input#email2 {
+    margin-left: 17%;
+    width: 310px;
+}
+
+#Form2 input#orgName {
+    margin-left: 4%;
+    width: 310px;
+}
+
+#Form2 textarea#message2,
+#Form2 textarea#displayMessage {
+    margin-left: 130px;
+    width: 475px;
+    height: 30px;
+}
+
+#Form2 input#file2 {
+    margin-left: 10%;
+}
+
+button {
+    padding: 10px;
+    margin-left: 3%;
+    border: solid white 1px;
+    color: rgb(255, 0, 0);
+    font-weight: 900;
+    background-color: rgba(255, 255, 255, 0.932);
+}
+
+button:hover {
+    background-color: rgba(92, 66, 0, 0.495);
+    color: black;
+}
+
+/* Additional styles for saahi3.html */
+#container {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(63, 38, 0, 0.358);
+    padding: 20px;
+}
+
+#imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#uploadedImage {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#contentContainer {
+    flex: 2;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#nameDisplay,
+#emailDisplay,
+#messageDisplay,
+#organisationDisplay,
+#displayMessageDisplay {
+    list-style: none;
+    line-height: 30px;
+}
+
+footer {
+    background-color: #3b2200;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer img{
+    width: 20px;
+    height: auto;
+}
+
+footer a{
+    text-decoration: none;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer2</title>
+    <link rel="stylesheet" href="saahi2.css">
+</head>
+
+<body>
+    <div id="container">
+        <form id="Form2">
+            <h4>
+                <label for="name2">Name</label>
+                <input type="text" id="name2" name="name"><br>
+                <label for="email2">Email</label>
+                <input type="email" id="email2" name="email"><br>
+                <label for="message2">What is the purpose of this volunteering event</label><br>
+                <textarea id="message2" name="message"></textarea><br>
+                <label for="orgName">Organisation name</label>
+                <input type="text" id="orgName" name="organisation"><br>
+                <label for="displayMessage">Description - State a text that needs to be displayed on the page</label>
+                <textarea id="displayMessage" name="displayMessage"></textarea><br>
+                <label for="file2">Upload a file</label>
+                <input type="file" id="file2" name="file">
+                <button type="submit">Send</button>
+            </h4>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 UPRISE. All rights reserved.</p>
+            <p>
+                <a href="#" style="color: #fff;"><img src ="facebook (1).png" alt="facebook"></a> |
+                <a href="#" style="color: #fff;"><img src ="twitter-sign (1).png" alt="twitter"></a> |
+                <a href="#" style="color: #fff;"><img src="instagram (1).png" alt="instagram"></a>
+            </p>
+            <p>
+                <a href="anjali.html" style="color: #fff;">Home</a> |
+                <a href="#" style="color: #fff;">Health Care</a> |
+                <a href="akaash1.html" style="color: #fff;">Donations</a> |
+                <a href="saahi.html" style="color: #fff;">Volunteer</a> |
+                <a href="#" style="color: #fff;">User Profile</a>
+            </p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.getElementById('Form2').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the form from submitting in the default way
+
+            // Gather form data
+            const name = document.getElementById('name2').value;
+            const email = document.getElementById('email2').value;
+            const message = document.getElementById('message2').value;
+            const organisation = document.getElementById('orgName').value;
+            const displayMessage = document.getElementById('displayMessage').value;
+            const fileInput = document.getElementById('file2');
+
+            // Store form data in sessionStorage
+            sessionStorage.setItem('name', name);
+            sessionStorage.setItem('email', email);
+            sessionStorage.setItem('message', message);
+            sessionStorage.setItem('organisation', organisation);
+            sessionStorage.setItem('displayMessage', displayMessage);
+
+            // Handle file upload and storage in sessionStorage
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    sessionStorage.setItem('uploadedImageUrl', event.target.result);
+                    window.location.href = 'saahi3.html';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                window.location.href = 'saahi3.html';
+            }
+        });
+    </script>
+</body>
+
+</html>

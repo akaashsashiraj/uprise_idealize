@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>akaash</title>
+    <link rel="stylesheet" href="akaash2.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="menu">
+                <a href="anjali.html"> <img id="logo" src="uprise_logo2.jpg" alt="logo"></a>
+                <ul>
+
+                    <li><a href="#">HEALTH CARE</a></li>
+                    <li><a href="akaash1.html">DONATIONS</a></li>
+                    <li><a href="saahi.html">VOLUNTEER</a></li>
+                    <li><a href="index.html">USER PROFILE</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="pic">
+            <img src="uprise_logo2-removebg-preview.png" alt="">
+        </div>
+
+    </div>
+    <div class="content">
+        <h1>Call to Generosity.</h1>
+        <h3>Donating to those in need provides essential resources and opportunities, helping to lift individuals and
+            families out of hardship.<br>
+            Your generosity fosters stronger, more compassionate communities, creating a brighter future for everyone.
+        </h3>
+        <p>
+            <button type="button"><span></span><a href="akaash2.html">DONATE US</a></button>
+            <button type="button"><span></span><a href="saahi2.html">REQUEST DONATION</a></button>
+
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 UPRISE. All rights reserved.</p>
+            <p>
+                <a href="#" style="color: #fff;"><img src ="facebook (1).png" alt="facebook"></a> |
+                <a href="#" style="color: #fff;"><img src ="twitter-sign (1).png" alt="twitter"></a> |
+                <a href="#" style="color: #fff;"><img src="instagram (1).png" alt="instagram"></a>
+            </p>
+            <p>
+                <a href="anjali.html" style="color: #fff;">Home</a> |
+                <a href="#" style="color: #fff;">Health Care</a> |
+                <a href="akaash1.html" style="color: #fff;">Donations</a> |
+                <a href="saahi.html" style="color: #fff;">Volunteer</a> |
+                <a href="#" style="color: #fff;">User Profile</a>
+            </p>
+        </div>
+    </footer>
+
+    
+    <script>
+        // Show the button when the user scrolls down 20px from the top of the document
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("backToTopBtn").style.display = "block";
+            } else {
+                document.getElementById("backToTopBtn").style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            // Get the current position of the page
+            const currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+            // Calculate the distance to scroll
+            const distanceToTop = -currentPosition;
+
+            // Set up the animation
+            const duration = 500; // Duration of the animation in milliseconds
+            const start = performance.now();
+
+            // Animate the scrolling
+            requestAnimationFrame(function animate(time) {
+                let timeFraction = (time - start) / duration;
+                if (timeFraction > 1) timeFraction = 1;
+
+                // Apply easing function for smoother animation
+                const easing = function (t) { return t * (2 - t); };
+                const progress = easing(timeFraction);
+
+                // Scroll the page
+                window.scrollTo(0, currentPosition + distanceToTop * progress);
+
+                // Continue the animation if not finished
+                if (timeFraction < 1) {
+                    requestAnimationFrame(animate);
+                }
+            });
+        } 
+    </script>
+</body>
+
+</html>

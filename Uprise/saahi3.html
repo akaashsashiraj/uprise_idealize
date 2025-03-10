@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Success</title>
+    <link rel="stylesheet" href="saahi2.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="imageContainer">
+            <img id="uploadedImage" src="" alt="Uploaded Image">
+        </div>
+        <div id="contentContainer">
+            <h4>Thank you for your submission!</h4>
+            <p id="nameDisplay"></p>
+            <p id="emailDisplay"></p>
+            <p id="messageDisplay"></p>
+            <p id="organisationDisplay"></p>
+            <p id="displayMessageDisplay"></p>
+            <button id="donateButton"><a href="akaash2.html">Donate</a></button>
+            <button id="volunteerButton"><a href="saahi4.html">Volunteer</a></button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 UPRISE. All rights reserved.</p>
+            <p>
+                <a href="#" style="color: #fff;"><img src ="facebook (1).png" alt="facebook"></a> |
+                <a href="#" style="color: #fff;"><img src ="twitter-sign (1).png" alt="twitter"></a> |
+                <a href="#" style="color: #fff;"><img src="instagram (1).png" alt="instagram"></a>
+            </p>
+            <p>
+                <a href="anjali.html" style="color: #fff;">Home</a> |
+                <a href="#" style="color: #fff;">Health Care</a> |
+                <a href="akaash1.html" style="color: #fff;">Donations</a> |
+                <a href="saahi.html" style="color: #fff;">Volunteer</a> |
+                <a href="#" style="color: #fff;">User Profile</a>
+            </p>
+        </div>
+    </footer>
+
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            window.location.search.slice(1).split('&').forEach(param => {
+                const [key, value] = param.split('=');
+                params[key] = decodeURIComponent(value);
+            });
+            return params;
+        }
+
+        const params = getQueryParams();
+        document.getElementById('nameDisplay').innerText = `Name: ${params.name}`;
+        document.getElementById('emailDisplay').innerText = `Email: ${params.email}`;
+        document.getElementById('messageDisplay').innerText = `Purpose: ${params.message}`;
+        document.getElementById('organisationDisplay').innerText = `Organisation: ${params.organisation}`;
+        document.getElementById('displayMessageDisplay').innerText = `Description: ${params.displayMessage}`;
+
+        // Handle the uploaded image display
+        const uploadedImage = document.getElementById('uploadedImage');
+        const imageUrl = sessionStorage.getItem('uploadedImageUrl');
+        if (imageUrl) {
+            uploadedImage.src = imageUrl;
+        }
+    </script>
+</body>
+
+</html>

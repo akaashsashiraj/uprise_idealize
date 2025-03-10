@@ -1,0 +1,579 @@
+h1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    border: #000000 2px;
+    align-items: center;
+    color: #3b2200;
+}
+
+h4 {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    border: #000000 2px;
+    align-items: center;
+    color: #3b2200;
+}
+
+
+
+#profile {
+    height: 30px;
+    width: auto;
+    position: absolute;
+    left: 90%;
+    top: 5%;
+    border: 3px solid #3b2200;
+}
+
+#about {
+    text-decoration: none;
+    width: 100px;
+    position: absolute;
+    left: 75%;
+    top: 42%;
+    padding: 10px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: 700;
+    border: 2px solid #964B00;
+    background: transparent;
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+#about:hover {
+    background-color: #ffffff;
+    color: #fff;
+    border: 2px solid #964B00;
+}
+
+span {
+    background: #964B00;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.menu {
+    background: linear-gradient(to bottom, rgba(112, 63, 2, 0.9), transparent);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 100px;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    color: aliceblue;
+}
+
+#logo {
+    margin-left: 20px;
+    height: 75px;
+    width: 75px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.466), 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 450px;
+    margin-right: auto;
+    list-style: none;
+}
+
+ul li {
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 14px;
+    color: #fff;
+}
+
+ul li a {
+    color: #3b2200;
+    font-family: sans-serif;
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+ul li a:hover {
+    color: #090909;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+ul li a:active {
+    color: #000000;
+}
+
+.containerr {
+    width: 100%;
+    overflow: hidden;
+}
+
+.containerr video {
+    width: 100%;
+    height: 20%;
+}
+
+#mission {
+    top: 208%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+}
+
+#Customers1 {
+    position: absolute;
+    top: 180%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 40px;
+    font-family: 'Lemon/Milk', sans-serif;
+    background-color: rgba(112, 63, 2, 0.9);
+    padding: 10px;
+    color: aliceblue;
+    z-index: 1;
+}
+
+.testimonial {
+    left: 9%;
+    position: absolute;
+    top: 120%;
+    margin: 20px auto;
+    width: 80%;
+    height: 195px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.384);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.08);
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 25px;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+    z-index: 1;
+}
+
+.testimonial.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+#nextBtn {
+    position: absolute;
+    top: 158%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: rgba(112, 63, 2, 0.9);
+    border: 4px solid #ffffff;
+    color: #fff;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 5px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+}
+
+#nextBtn:hover {
+    background-color: transparent;
+    border: 4px solid #744100;
+    color: #744100;
+}
+
+.customer-name {
+    font-weight: 300;
+    z-index: 1;
+}
+
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    z-index: 30;
+    background-color: #744100;
+    color: #fff;
+    border: none;
+    border-radius: 45%;
+    cursor: pointer;
+    transition-duration: 0.6s;
+}
+
+#backToTopBtn:hover {
+    background-color: #ffffff;
+    color: #6f5723;
+}
+
+.pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: black;
+}
+
+.pic img {
+    height: 100px;
+    width: auto;
+}
+
+.team-container {
+    top: 350%;
+    display: flex;
+    text-align: center;
+    padding: 35px;
+}
+
+.team-member img {
+    margin-left: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+}
+
+#titleAbout {
+    top: 235%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 40px;
+    font-family: 'Lemon/Milk', sans-serif;
+    background-color: rgba(112, 63, 2, 0.9);
+    padding: 10px;
+    color: aliceblue;
+    z-index: 1;
+}
+
+.us {
+    text-align: center;
+}
+
+.team-member {
+    padding: 30px;
+}
+
+#force {
+    font-weight: 900;
+}
+
+#gallery {
+    margin-top: 320%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 40px;
+    font-family: 'Lemon/Milk', sans-serif;
+    padding: 10px;
+    color: aliceblue;
+    z-index: 1;
+    background-color: rgba(112, 63, 2, 0.9);
+}
+
+#events {
+    top: 333%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: 'Lemon/Milk', sans-serif;
+    padding: 10px;
+    color: aliceblue;
+    z-index: 1;
+    background-color: #3b22006e;
+}
+
+#scale {
+    width: 100%;
+    height: 100%;
+}
+
+.imageGallery {
+    width: auto;
+    border: solid #744100 10px;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.imageGallery .imagesList .images {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.5s ease;
+}
+
+.images .image {
+    left: 25%;
+    width: 100%;
+    height: 1000px;
+}
+
+.images .description {
+    position: absolute;
+    top: 25%;
+    width: auto;
+    max-width: 80%;
+    left: 20%;
+    transform: translateX(-50%);
+    background-color: rgba(112, 62, 2, 0.633);
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.caption {
+    margin: 15px 0;
+    font-weight: 500;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.content {
+    padding-top: 10px;
+    /* Adding padding */
+    font-size: 16px;
+    /* Settingthe font size */
+    font-weight: 50px;
+    /* Setting the font weight to lighter */
+}
+
+.thumbnailImages {
+    position: absolute;
+    /* Positioning absolutely */
+    bottom: 10px;
+    /* Setting the bottom position */
+    left: 8%;
+    /* Setting  the left position */
+    width: max-content;
+    /* Setting the width to maximum content */
+    z-index: 100;
+    /* Setting the z-index to show above all elements*/
+    display: flex;
+    /* Setting the display to flex  */
+    gap: 8px;
+    /* Setting the gap between items */
+    padding: 30px;
+    /* Adding padding */
+    overflow: hidden;
+    /* Hiding overflow beyond content */
+}
+
+.thumbnailImages .images {
+    width: 130px;
+    /* Setting the width */
+    height: 160px;
+    /* Setting the height */
+    flex-shrink: 0;
+    /* Preventing shrinking */
+    position: relative;
+    border: 2px solid transparent;
+    /* Adding a border */
+    transition: transform 0.3s ease;
+    /* Adding a transition effect */
+}
+
+.thumbnailImages .images .image {
+    width: 100%;
+    /* Setting the width to 100% */
+    height: 100%;
+    /* Setting the height to 100% */
+    object-fit: cover;
+    /* Scaling image to cover the background*/
+    border-radius: 20px;
+    /* Adding a border radius */
+
+}
+
+
+.slide {
+    position: absolute;
+    /* Positioning absolutely */
+    bottom: 35%;
+    /* Setting the bottom position */
+    right: 5%;
+    /* Setting the right position */
+    width: 400px;
+    /* Setting the width */
+    max-width: 40%;
+    /* Setting  the maximum width */
+    display: flex;
+    /* Setting display to flex */
+    gap: 10px;
+    /* Setting gap between items */
+    align-items: center;
+    /* Centering items vertically */
+}
+
+.slide button {
+    width: 40px;
+    /* Setting the width */
+    height: 40px;
+    /* Setting  the height */
+    background-color: #fff;
+    /* Setting the background color */
+    border: none;
+    /* Removing the border */
+    font-family: monospace;
+    /* Setting the font family */
+    color: gray;
+    /* Setting the text color */
+    border-radius: 20px;
+    /* Adding a border radius */
+    font-weight: bold;
+    /* Setting the font weight to bold */
+    font-size: larger;
+    /* Setting the font size */
+    transition: 0.4s;
+    /* Adding a transition effect */
+    z-index: 100;
+    /* Setting the z-index */
+
+}
+
+.slide button:hover {
+    background-color: grey;
+    /* Set to change the background color on hover */
+    color: #fff;
+    /* Set to change the text color on hover */
+    border-radius: 20px;
+    /* Adding a border radius */
+}
+
+.thumbnailImages .images:hover {
+    border: 2px solid #fff;
+    /* Adding a border on hover */
+    border-radius: 20px;
+    /* Adding a border radius on hover */
+    cursor: pointer;
+    /* Set to change the cursor on hover*/
+    transform: scale(1.1);
+    /* Scaling up when hovered*/
+    z-index: 1;
+    /* Setting the z-index */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Adding a box shadow on hover */
+}
+
+.thumbnailImages .images:not(:hover) {
+    transform: scale(0.9);
+    /* Scaling down the images after hovering */
+    transition: transform 0.3s ease;
+    /* Adding a transition effect */
+}
+
+.thumbnailImages::before {
+    content: '';
+    /* Adding a pseudo-element */
+    position: absolute;
+    /* Positioning absolutely */
+    bottom: 0;
+    /* Setting the bottom position */
+    left: 0;
+    /* Setting the left position */
+    right: 0;
+    /* Setting the right position */
+    width: 100%;
+    /* Setting the width */
+    height: 200px;
+    /* Setting the height */
+    background: linear-gradient(to bottom, rgba(54, 50, 50, 0), rgba(0, 0, 0, 0.8));
+    /* Adding a gradient to the background */
+    pointer-events: none;
+    /* Disabling pointer events */
+}
+
+.thumbnailImages .description {
+    margin-left: 100px;
+    left: 10%;
+    position: absolute;
+    /* Positioning absolutely */
+    bottom: -40px;
+    /* Setting the bottom position */
+    left: 0;
+    /* Setting the left position */
+    right: 0;
+    /* Setting the right position */
+    text-align: center;
+    /* Centering the text */
+    color: white;
+    /* Setting  the text color */
+    font-size: 14px;
+    /* Setting the font size */
+    font-weight: bold;
+    opacity: 0;
+    /* Setting initial opacity */
+    transition: opacity 0.3s ease;
+    /* Adding a transition effect */
+}
+
+.thumbnailImages .images:hover .description {
+    left: 10%;
+    bottom: 10px;
+    /* Setting the bottom position on hover */
+    opacity: 0;
+    /* Setting the opacity on hover */
+    pointer-events: none;
+    /* Disabling pointer events on hover */
+}
+
+#open {
+    font-family: monospace;
+    /* Setting the font family */
+}
+
+footer {
+    background-color: #3b2200;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer img{
+    width: 20px;
+    height: auto;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+#end {
+    left: 42%;
+    top: 430%;
+    color: aliceblue;
+}
